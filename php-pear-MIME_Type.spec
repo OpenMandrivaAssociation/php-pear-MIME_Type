@@ -5,11 +5,11 @@
 
 Summary:	%{_pearname} - utility class for dealing with MIME types
 Name:		php-pear-%{_pearname}
-Version:	1.0.0
-Release:	%mkrel 9
+Version:	1.2.0
+Release:	%mkrel 1
 License:	PHP License
 Group:		Development/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
+Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/package/MIME_Type/
 Requires(post): php-pear
 Requires(preun): php-pear
@@ -50,8 +50,8 @@ rm -rf %{buildroot}
 
 install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}
 
-install %{_pearname}-%{version}/Type.php %{buildroot}%{_datadir}/pear/%{_class}
-install %{_pearname}-%{version}/Parameter.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}
+install %{_pearname}-%{version}/MIME/Type.php %{buildroot}%{_datadir}/pear/%{_class}
+install %{_pearname}-%{version}/MIME/Type/* %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}
 
 install -d %{buildroot}%{_datadir}/pear/packages
 install -m0644 package.xml %{buildroot}%{_datadir}/pear/packages/%{_pearname}.xml
@@ -80,7 +80,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/example.php
+%doc %{_pearname}-%{version}/docs/examples/*.php
 %{_datadir}/pear/%{_class}/*.php
 %{_datadir}/pear/%{_class}/%{_subclass}
 %{_datadir}/pear/packages/%{_pearname}.xml
