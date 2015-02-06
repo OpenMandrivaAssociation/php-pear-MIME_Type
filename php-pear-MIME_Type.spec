@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.1
-Release:	4
+Release:	5
 Summary:	Utility class for dealing with MIME types
 License:	PHP License
 Group:		Development/PHP
